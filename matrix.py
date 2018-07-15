@@ -1,10 +1,7 @@
 import random
-
 # from copy import deepcopy
 
-
 class Matrix:
-
     def __init__(self, nrows, ncols):
         """Construct a (nrows X ncols) matrix"""
         self.rows = nrows
@@ -18,7 +15,6 @@ class Matrix:
                 num = random.randint(0, 9)
                 self.mat[i][j] = num
         
-
     def add(self, _matrix):
         """return a new Matrix object after summation"""
         if (self.rows is not _matrix.rows) or (self.cols is not _matrix.cols):
@@ -68,21 +64,21 @@ class Matrix:
             print("")
         print("")
         
-
+""" Matrix A """
 rowsA = int(input("Enter A matrix's rows:"))
 colsA = int(input("Enter A matrix's cols:"))
 matrix_a = Matrix(rowsA, colsA)
 print("Matrix A(", rowsA, ",", colsA, "):")
 matrix_a.display()
 
-
+""" Matrix B """
 rowsB = int(input("Enter B matrix's rows:"))
 colsB = int(input("Enter B matrix's cols:"))
 matrix_b = Matrix(rowsB, colsB)
 print("Matrix B(", rowsB, ",", colsB, "):")
 matrix_b.display()
 
-
+""" add matrixs """
 matrix_add = matrix_a.add(matrix_b)
 print("======== A + B ===========")
 if matrix_add:
@@ -90,7 +86,7 @@ if matrix_add:
 else:
     print("Matrixs' size should be in the same size", end='\n\n')
 
-
+""" subtract maxtrixs """
 matrix_sub = matrix_a.sub(matrix_b)
 print("======== A - B ===========")
 if matrix_sub:
@@ -98,7 +94,7 @@ if matrix_sub:
 else:
     print("Matrixs' size should be in the same size", end='\n\n')
 
-
+""" multiply matrixs """
 matrix_mul = matrix_a.mul(matrix_b)
 print("======== A * B ===========")
 if matrix_mul:
@@ -106,7 +102,7 @@ if matrix_mul:
 else:
     print("Matrix A's row should be in the same size of Matrix B's column", end='\n\n')
 
-
+""" transpose the matrix """
 print("== the transpose of A*B ==")
 if matrix_mul:
     matrix_trans = matrix_mul.transpose()
